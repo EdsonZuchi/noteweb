@@ -61,7 +61,7 @@
                 <br><br>
                 <input type="submit" value="Logar">
                 <br><br>
-                <a href="">Cadastre-se aqui</a>
+                <a href="../controller/register.php">Cadastre-se aqui</a>
                 <br><br>
             </form>
         </div>

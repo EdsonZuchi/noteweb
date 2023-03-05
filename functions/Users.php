@@ -8,9 +8,9 @@
 
             $sql = "insert into tb_user(name, email, password, birth) values ('$user->name', '$user->email', '$user->password', '$user->birth');";
             if(mysqli_query($connection, $sql)){
-                $msg = "Cadastrado com sucesso"; 
+                echo "<script>Cadastrado com sucesso</script>"; 
             } else{
-                $msg = "Error: " . $sql . "<br>" . mysqli_error($connection);
+                $msg = "<script>Error: " . $sql . "<br>" . mysqli_error($connection) . "</script>";
             }
 
             mysqli_close($connection);
