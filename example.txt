@@ -1,0 +1,11 @@
+include("../model/User.php");
+include("../functions/Users.php");
+
+$users = new Users();
+$user = new User();
+$user->name = 'Aline'; 
+$user->password = 'kokoflop123';
+$user->email = 'alinesabel2@gmail.com';
+$user->birth = '2003-05-06';
+
+$users->save($user); 

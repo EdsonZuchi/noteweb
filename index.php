@@ -10,6 +10,6 @@
         header("Location: /controller/login.php");
         exit();
     }
-
     
+    header("Location: /controller/menu.php"); 
 ?>  

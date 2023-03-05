@@ -21,7 +21,7 @@
     if($email !== '' && $password !== ''){
         include("../connection/SearchConnection.php");
 
-        $sql = "select * from tb_user where email = '".$email."'";
+        $sql = "select * from tb_user where email = '$email'";
         $result = mysqli_query($connection, $sql); 
 
         if($row = mysqli_fetch_array($result)){
