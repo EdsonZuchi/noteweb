@@ -51,6 +51,8 @@
                 $users->save($user);
                 header("Location: ../controller/login.php");
             }
+
+            mysqli_close($connection);
         }
     }
 

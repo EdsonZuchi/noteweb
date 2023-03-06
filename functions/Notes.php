@@ -60,6 +60,22 @@
             mysqli_close($connection);
             return $note;
         }
+
+        public function findAll() {
+            
+            include("../connection/SearchConnection.php");
+
+            $sql = 'select * from tb_note';
+            $result = mysqli_query($connection, $sql);
+            $rows = array();
+        
+            while ($row = $result->fetch_assoc()) {
+              $rows[] = $row;
+            }
+        
+            mysqli_close($connection);
+            return $rows;
+        }
     }
 
 ?>

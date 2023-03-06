@@ -77,28 +77,18 @@
             return $user;
         }
 
-        public function findAll(){
-
+        public function findAll() {
+            
             include("../connection/SearchConnection.php");
 
-            $sql = "select * from tb_user"; 
-            $result = mysqli_query($connection, $sql); 
-
-            $user = new User(); 
+            $sql = 'select * from tb_user';
+            $result = mysqli_query($connection, $sql);
             $rows = array();
-            $i = 0; 
-            if(mysqli_num_rows($result) > 0){
-                while($row = mysqli_fetch_array($result)){
-                    $user->id = $row['id']; 
-                    $user->name = $row['name']; 
-                    $user->password = $row['password'];
-                    $user->email = $row['email'];
-                    $user->birth = $row['birth'];
-                    $rows[$i] = $user;
-                    $i++; 
-                }
+        
+            while ($row = $result->fetch_assoc()) {
+              $rows[] = $row;
             }
-
+        
             mysqli_close($connection);
             return $rows;
         }
