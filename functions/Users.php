@@ -20,7 +20,7 @@
 
             include("../connection/SearchConnection.php"); 
 
-            $sql = "update tb_user set name = $user->name, birth = $user->birth where id = $user->id";
+            $sql = "update tb_user set name = '$user->name', birth = '$user->birth' where id = $user->id";
             if(mysqli_query($connection, $sql)){
                 $msg = "Editado com sucesso"; 
             }else{
